@@ -1,4 +1,4 @@
-# 234EDGER GDELT UTILITY
+# 234LEDGER GDELT UTILITY
 
 ## Get Current Global News and Articles, Categorized and Streamlined for Easy Access
 
