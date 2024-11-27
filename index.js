@@ -70,7 +70,7 @@ server.listen(port, () => {
                 if (done) {
                     (0, resource_1.initResource)(() => {
                         socket_1.MySocket.initialize(io);
-                        Log_1.Log.flow(`${site_1.brand || 'APPLICATION'} > running at http://localhost:${port}`);
+                        Log_1.Log.flow(`${site_1.brand || 'APPLICATION'} > running > visit http://localhost:${port} from your browser to access the web app.`);
                     });
                 }
                 else {

@@ -61,7 +61,9 @@
     "del": "Deletion successful!",
     "no_del": "DEletion failed!",
     "articles": "Articles",
-    "artins": "Double-click on a non-button area of a cell to copy its actual content to clipboard."
+    "artins": "Double-click on a non-button area of a cell to copy its actual content to clipboard.",
+    "new_fetch": "A new fetch has been successfully made in the \"{{cat}}\" category.",
+    "new_del": "A deletion has been successfully made in the \"{{cat}}\" category."
   },
   "table": {
     "nores": "No resources available for this category. Click the plus button above to fetch new articles for this category.",

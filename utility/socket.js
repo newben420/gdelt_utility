@@ -49,6 +49,9 @@ MySocket.runOnce = () => {
                 resource_1.DAOResource.delete(ts, catid, deleted => {
                     (0, resource_2.deleteResource)(filename);
                     f(deleted);
+                    if (deleted) {
+                        _a.broadcastDelete(catid, ts);
+                    }
                 });
             });
             socket.on("load_stat", (f) => {
@@ -89,7 +92,8 @@ MySocket.runOnce = () => {
                                         callback(res_1.GRes.err("server_responses.errors.no_save"));
                                     }
                                     else {
-                                        callback(res_1.GRes.succ(res));
+                                        _a.broadcastNewResource(res);
+                                        callback(res_1.GRes.succ({}));
                                     }
                                 });
                             }
@@ -112,5 +116,15 @@ MySocket.runOnce = () => {
                 f(yield custom_range_1.CustomRange.setCustomRange(v));
             }));
         });
+    }
+};
+MySocket.broadcastNewResource = (res) => {
+    if (_a.io != null) {
+        _a.io.emit('new_res', res);
+    }
+};
+MySocket.broadcastDelete = (catID, ts) => {
+    if (_a.io != null) {
+        _a.io.emit('del_res', { catID, ts });
     }
 };
