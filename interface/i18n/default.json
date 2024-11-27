@@ -1,0 +1,88 @@
+{
+  "alerts": {
+    "success": "SUCCESS",
+    "error": "ERROR",
+    "warning": "WARNING",
+    "info": "INFO"
+  },
+  "buttons": {
+    "ok": "OK",
+    "no": "No",
+    "yes": "Yes",
+    "submit": "Submit",
+    "cancel": "Cancel"
+  },
+  "prompts": {
+    "oc": "Cancelled!",
+    "def_error": "Invalid! Please follow provided instruction.",
+    "no_change": "No changes made.",
+    "sure": "Are you sure?",
+    "surefetch": "Are you sure you want to fetch latest articles for this category?",
+    "surefetchextra": "{{date}} is the time you last fetched articles for this category without using a custom range. Are you sure you want to fetch latest articles for this category?",
+    "copyx": "\"{{val}}\" copied to clipboard."
+  },
+  "ins": {
+    "def": "Please follow instructions.",
+    "pat": "Pattern mismatch.",
+    "loob": "Input length out of bound.",
+    "req": "Input is required."
+  },
+  "server_responses": {
+    "errors": {
+      "no_conn2": "A connection could not be established with GDELT or a timeout error has occurred.",
+      "no_art": "Query returned an empty articles array.",
+      "no_save": "Failed to save fetched resource.",
+      "noquery": "Query cannot be empty! Please supply at least a domain, theme, source country or source language."
+    },
+    "success": {
+      "default": "Operation completed successfully."
+    }
+  },
+  "home": {
+    "config": "Config & Stats",
+    "cats": "Categories",
+    "candl": "Country(ies) | Language(s)",
+    "resc": "Resource Count",
+    "dom": "Domain(s)",
+    "maxart": "Max Articles / Fetch",
+    "cr": "Custom Range Fetch",
+    "cr_info":  "Click button to toggle between using a custom range for the articles' timeline when fetching new articles, or not. Green is ON. GREY is OFF.",
+    "gkg_info":  "These are GKG themes from the GDELT project, set for this category in the 'categories.json' file. You can click on a theme to toggle it. Green is ON, which means it will be used in your next fetch action. GREY is OFF, meaning it will be filtered out on your next fetch action.",
+    "gkg":  "GKG Themes",
+    "start_date": "Start Date and Time",
+    "start_date_ins": "Strictly in the format YYYY-MM-DD HH:MM. Must not be  earlier than {{date}}",
+    "end_date_ins": "Strictly in the format YYYY-MM-DD HH:MM. Must be later than {{date}}",
+    "end_date": "Start Date and Time",
+    "range_exceeded": "Range exceeds maximum. Start date must be within the last {{day}} day(s).",
+    "range_invalid": "Invalid range! End date and time must be greater than start date and time.",
+    "loading": "UI is LOADING...",
+    "yes": "Yes",
+    "no": "No",
+    "del": "Deletion successful!",
+    "no_del": "DEletion failed!",
+    "articles": "Articles",
+    "artins": "Double-click on a non-button area of a cell to copy its actual content to clipboard."
+  },
+  "table": {
+    "nores": "No resources available for this category. Click the plus button above to fetch new articles for this category.",
+    "delete": "Delete",
+    "noart": "No articles found",
+    "action": "Action",
+    "timestamp": "Articles' Timeline",
+    "records": "Articles' Quantity",
+    "fetchts": "Fetch Timestamp",
+    "ucr": "Used Custom Range",
+    "open": "Open",
+    "ncr": "With Custom Range",
+    "nocr": "Without Custom Range",
+    "title": "Title",
+    "seendate": "Seen Date",
+    "url": "URL",
+    "url_mobile": "URL (Mobile)",
+    "domain": "Domain",
+    "socialimage": "Social Image",
+    "lang": "Language",
+    "count": "Source Country",
+    "new": "New Fetch"
+  }
+}
