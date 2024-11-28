@@ -92,7 +92,7 @@ const fetchArticles = (catID, range, themes, callback) => {
                     }
                 }
                 else {
-                    callback(res_1.GRes.err(`${response.headers.server ? `${response.headers.server} => ` : ""}${response.data}`));
+                    callback(res_1.GRes.err(`${response.headers.server ? `${response.headers.server} => ` : ""}${response.data.length ? response.data : "EMPTY RESPONSE FOR YOUR QUERY"}.`));
                 }
             }
             else {
