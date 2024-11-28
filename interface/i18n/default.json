@@ -52,7 +52,7 @@
     "start_date": "Start Date and Time",
     "start_date_ins": "Strictly in the format YYYY-MM-DD HH:MM. Must not be  earlier than {{date}}",
     "end_date_ins": "Strictly in the format YYYY-MM-DD HH:MM. Must be later than {{date}}",
-    "end_date": "Start Date and Time",
+    "end_date": "End Date and Time",
     "range_exceeded": "Range exceeds maximum. Start date must be within the last {{day}} day(s).",
     "range_invalid": "Invalid range! End date and time must be greater than start date and time.",
     "loading": "UI is LOADING...",
