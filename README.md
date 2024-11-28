@@ -14,13 +14,13 @@ For instance, a query might retrieve articles in the **Business and Economy** ca
 
 ## Changelog
 
-Since the inital commit of this repository on 26th November, 2024, major changes and augmentations have been made. they as as follows
+Since the inital commit of this repository on 26th November, 2024, major changes and augmentations have been made. they as as follows:
 
 ### 28th November, 2024 11PM WAT - Content Fetching and Summarization
 
 ![New content extraction and summarization feature](./screenshots/body.png "New content extraction and summarization feature")
 
-- In line with the roadmap of this project and the requirements of  **[234Ledger.com.ng Admin](https://234ledger.com.ng)**, an extra tab has been added which enable users to extract the actual content of an article from its URL, and further summarize it using any configured summarization API of their choice. This tab can be accessed from the "Actions" column of the artcles' view.
+- In line with the roadmap of this project and the requirements of  **[234Ledger.com.ng Admin](https://234ledger.com.ng)**, an extra tab has been added which enable users to extract the actual content of an article from its URL, and further summarize it using any configured summarization API of their choice. This tab can be accessed from the "Actions" column of the articles' view.
 
 - This feature has brought about the inclusion of **jsdom** and **@mozilla/readability** to the project dependecies. Do not forget to ``npm install`` when you update your local repositories. The **[\.env](./.env)** file has also been augmented with new configurations.
 
