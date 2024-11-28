@@ -30,12 +30,19 @@
   "server_responses": {
     "errors": {
       "no_conn2": "A connection could not be established with GDELT or a timeout error has occurred.",
+      "no_conn3": "A connection could not be established with the source server or a timeout error has occurred.",
+      "no_conn7": "A connection could not be established with the summarization API or a timeout error has occurred.",
+      "no_conn4": "An unknown error occured while parsing body returned from source server.",
+      "no_conn5": "No article content found in body.",
+      "no_conn6": "Summarization API returned an unknown response.",
       "no_art": "Query returned an empty articles array.",
       "no_save": "Failed to save fetched resource.",
-      "noquery": "Query cannot be empty! Please supply at least a domain, theme, source country or source language."
+      "noquery": "Query cannot be empty! Please supply at least a domain, theme, source country or source language.",
+      "changes": "Failed to save changes."
     },
     "success": {
-      "default": "Operation completed successfully."
+      "default": "Operation completed successfully.",
+      "changes": "Changes saved!"
     }
   },
   "home": {
@@ -46,9 +53,9 @@
     "dom": "Domain(s)",
     "maxart": "Max Articles / Fetch",
     "cr": "Custom Range Fetch",
-    "cr_info":  "Click button to toggle between using a custom range for the articles' timeline when fetching new articles, or not. Green is ON. GREY is OFF.",
-    "gkg_info":  "These are GKG themes from the GDELT project, set for this category in the 'categories.json' file. You can click on a theme to toggle it. Green is ON, which means it will be used in your next fetch action. GREY is OFF, meaning it will be filtered out on your next fetch action.",
-    "gkg":  "GKG Themes",
+    "cr_info": "Click button to toggle between using a custom range for the articles' timeline when fetching new articles, or not. Green is ON. GREY is OFF.",
+    "gkg_info": "These are GKG themes from the GDELT project, set for this category in the 'categories.json' file. You can click on a theme to toggle it. Green is ON, which means it will be used in your next fetch action. GREY is OFF, meaning it will be filtered out on your next fetch action.",
+    "gkg": "GKG Themes",
     "start_date": "Start Date and Time",
     "start_date_ins": "Strictly in the format YYYY-MM-DD HH:MM. Must not be  earlier than {{date}}",
     "end_date_ins": "Strictly in the format YYYY-MM-DD HH:MM. Must be later than {{date}}",
@@ -63,7 +70,20 @@
     "articles": "Articles",
     "artins": "Double-click on a non-button area of a cell to copy its actual content to clipboard.",
     "new_fetch": "A new fetch has been successfully made in the \"{{cat}}\" category.",
-    "new_del": "A deletion has been successfully made in the \"{{cat}}\" category."
+    "new_del": "A deletion has been successfully made in the \"{{cat}}\" category.",
+    "nourl": "This article has no URL.",
+    "body": "Body",
+    "body_ins": "This initially is the extracted body of the url for this article. Remember to save after manual changes.",
+    "extract": "Extract from URL",
+    "save": "Save Changes",
+    "copy": "Copy to Clipboard",
+    "summary": "Summary",
+    "summary_ins": "Initially the response from the configured summary API. Remember to save after manual changes.",
+    "sum": "Get Body's Summary",
+    "clear": "Clear",
+    "body_req": "Body is required!",
+    "tok": "Tokens",
+    "max_tok": "Max tokens exceeded. Please manually reduce the amount of words in article's body."
   },
   "table": {
     "nores": "No resources available for this category. Click the plus button above to fetch new articles for this category.",
@@ -85,6 +105,8 @@
     "socialimage": "Social Image",
     "lang": "Language",
     "count": "Source Country",
-    "new": "New Fetch"
+    "new": "New Fetch",
+    "sn": "S/N",
+    "bands": "Content"
   }
 }

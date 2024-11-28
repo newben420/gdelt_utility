@@ -80,6 +80,9 @@ const fetchArticles = (catID, range, themes, callback) => {
         })}`;
         axios_1.default.get(fullURL, {
             timeout: site_1.GDConfig.timeout,
+            headers: {
+                Connection: 'keep-alive'
+            }
         }).then((response) => {
             if (response.status == 200) {
                 let res = response.data;

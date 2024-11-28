@@ -27,6 +27,7 @@ const debi_1 = require("./db/debi");
 const dotenv_1 = __importDefault(require("dotenv"));
 const validate_categories_1 = require("./utility/validate_categories");
 const resource_1 = require("./utility/resource");
+const content_1 = require("./utility/content");
 dotenv_1.default.config();
 const app = (0, express_1.default)();
 const port = site_1.PORT || process.env.PORT;
@@ -68,9 +69,11 @@ server.listen(port, () => {
             Log_1.Log.flow(`CATEGORIES VALIDATION > Success > ${r.message} categor${site_1.categories.length == 1 ? 'y' : 'ies'} found.`);
             db_config_1.DBCONFIG.configCallback = (done) => __awaiter(void 0, void 0, void 0, function* () {
                 if (done) {
-                    (0, resource_1.initResource)(() => {
-                        socket_1.MySocket.initialize(io);
-                        Log_1.Log.flow(`${site_1.brand || 'APPLICATION'} > running > visit http://localhost:${port} from your browser to access the web app.`);
+                    (0, content_1.initContent)(() => {
+                        (0, resource_1.initResource)(() => {
+                            socket_1.MySocket.initialize(io);
+                            Log_1.Log.flow(`${site_1.brand || 'APPLICATION'} > running > visit http://localhost:${port} from your browser to access the web app.`);
+                        });
                     });
                 }
                 else {

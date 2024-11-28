@@ -4,7 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimezoneShift = exports.GDConfig = exports.IS_PROD = exports.MODE = exports.PORT = exports.brand = exports.ROOT_DIR = exports.categories = void 0;
+exports.TimezoneShift = exports.ContentConfig = exports.GDConfig = exports.IS_PROD = exports.MODE = exports.PORT = exports.brand = exports.ROOT_DIR = exports.categories = void 0;
 const dotenv_1 = __importDefault(require("dotenv"));
 const categories_json_1 = __importDefault(require("./categories.json"));
 dotenv_1.default.config();
@@ -39,4 +39,10 @@ if (process.env.TIMEZONE_SET ? reg.test(process.env.TIMEZONE_SET) : false) {
         }
     }
 }
+class ContentConfig {
+}
+exports.ContentConfig = ContentConfig;
+ContentConfig.maxTokens = parseInt(process.env.MAX_TOKENS || "400");
+ContentConfig.maxTokensStrict = (process.env.MAX_TOKENS_STRICT == "YES") ? true : ((process.env.MAX_TOKENS == "NO") ? false : false);
+ContentConfig.summaryAPIURL = process.env.SUMMARY_API_URL || "";
 exports.TimezoneShift = timezoneShift;

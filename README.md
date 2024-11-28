@@ -1,14 +1,32 @@
 # 234LEDGER GDELT UTILITY
 
-## Get Current Global News and Articles, Categorized and Streamlined for Easy Access
+## Get Current Global News and Articles, Categorized, Summarized, and Streamlined for Easy Access
 
 ![Main Page of Project](./screenshots/home.png "Main Page of Project")
 
-This project is a web-based application that serves as a utility for generating queries to fetch articles from **[GDELT 2.0](https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/)** and as a repository for classifying, accessing, displaying and managing the fetched articles.
+This project is a web-based application that serves as a utility for generating queries to fetch articles from **[GDELT 2.0](https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/)** and as a repository for classifying, accessing, displaying, summarizing and managing the fetched articles.
 
-Users can search and store articles or news on specific **[GKG (Global Knowledge Graph) Themes](http://data.gdeltproject.org/api/v2/guides/LOOKUP-GKGTHEMES.TXT)**, categories (groups of related GKG themes under a single label), within specific countries or globally, and for selected timelines.
+Users can search and store articles or news on specific **[GKG (Global Knowledge Graph) Themes](http://data.gdeltproject.org/api/v2/guides/LOOKUP-GKGTHEMES.TXT)**, categories (groups of related GKG themes under a single label), within specific countries or globally, and for selected timelines. They can further fetch article content and summarize using their configured summarization API.
 
 For instance, a query might retrieve articles in the **Business and Economy** category (themes like EPU_ECONOMY, ECON_TAXATION, and ECON_INFLATION) published in Nigeria, in English, between **2024/10/22 at 12 PM** and **2024/11/20 at 11 AM**. The application not only fetches these results but also organizes them into a well-structured repository for easy tracking and future reference.
+
+---
+
+## Changelog
+
+Since the inital commit of this repository on 26th November, 2024, major changes and augmentations have been made. they as as follows
+
+### 28th November, 2024 11PM WAT - Content Fetching and Summarization
+
+![New content extraction and summarization feature](./screenshots/body.png "New content extraction and summarization feature")
+
+- In line with the roadmap of this project and the requirements of  **[234Ledger.com.ng Admin](https://234ledger.com.ng)**, an extra tab has been added which enable users to extract the actual content of an article from its URL, and further summarize it using any configured summarization API of their choice. This tab can be accessed from the "Actions" column of the artcles' view.
+
+- This feature has brought about the inclusion of **jsdom** and **@mozilla/readability** to the project dependecies. Do not forget to ``npm install`` when you update your local repositories. The **[\.env](./.env)** file has also been augmented with new configurations.
+
+- With reference to the summarization feature, users can decide on a summarization API and integrate it based on the instructions in the **[\.env](./.env)** file. **Personally, due to my dislike for limits, I set up a local python-based abstractive summarization API using Anaconda, pyTorch, HuggingFace transformers (models include t5-small, pegasus, or even most suitable facebook/bart-large-cnn), and Flask. It can be easily done.**
+
+- Please note that summarization will not work for you if you have not set it up.
 
 ---
 
@@ -19,7 +37,7 @@ This application allows users to classify **[GKG Themes](http://data.gdeltprojec
 Once configured, the application can be run, and the web app can be accessed in a browser. From the web app, users can:  
 - Set timelines for queries.  
 - Make **[GDELT 2.0](https://blog.gdeltproject.org/gdelt-doc-2-0-api-debuts/)** requests.  
-- View, access, and manage the resulting articles directly from the interface.  
+- View, access, and manage the resulting articles directly from the interface, including extracting and summarizing their content.  
 
 This setup streamlines the process of fetching and organizing global news articles for further exploration and management.
 
@@ -119,15 +137,30 @@ This project is designed to run locally and does not include server-side validat
 ## Technical Details  
 
 ### Tools Used  
-- **UI/Front-End:** Built with Angular 18.2.8, Bootstrap 5.3.3, and @ngx-translate/core 16.0.3.  
-- **Server:** Powered by Express 4.18.2 and TypeScript 5.3.3.  
+- **UI/Front-End:**  
+  Built with Angular 18.2.8, Bootstrap 5.3.3, and @ngx-translate/core 16.0.3.  
+
+- **Server:**  
+  Powered by Express 4.18.2 and TypeScript 5.3.3.  
+
 - **Communication:** 
   - Between UI and Server: Socket.io (socket.io 4.7.5 and ngx-socketio2-updated 18.1.0).  
   - Between Server and GDELT: Axios 1.7.2.  
-- **Persistence:** Utilizes Debbiebase 1.0.0, a lightweight file-system-based JSON database I developed for private projects.  
+
+- **Persistence:**  
+  Utilizes Debbiebase 1.0.0, a lightweight file-system-based JSON database I developed for private projects.  
+
+- **Content Extraction:**  
+  Utilizes JSDOM 25.0.1 and @Mozilla/readability 0.5.0.
+
+- **Content Summarization**  
+  Locally set up python-based abstractive summarization API using Anaconda, Pytorch, HuggingFace Transformers (with models like t5-small, pegasus, or facebook/bart-large-cnn), and Flask.
+
 
 ### Notable Features  
 - The UI includes a one-click toggle for light and dark modes, enhancing user convenience.  
+- The Application includes the ability to extract the actual contents of the articles from their URL. 
+- Abstractive summarization of the content using AI models.
 
 ---
 
@@ -135,7 +168,7 @@ This project is designed to run locally and does not include server-side validat
 
 This project continues to evolve based on [234Ledger.com.ng](https://234ledger.com.ng) admin’s requirements. Future plans include:  
 
-1. AI-Powered Super Highway:  
+1. AI-Powered Super Highway (Done):  
    - A feature to extract, summarize, categorize, and upload article content directly to [234Ledger.com.ng](https://234ledger.com.ng).  
    - Ensures no duplicate articles, news, or stories are uploaded.  
 
