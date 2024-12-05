@@ -22,11 +22,15 @@ Since the inital commit of this repository on 26th November, 2024, major changes
 
 - In line with the roadmap of this project and the requirements of  **[234Ledger.com.ng Admin](https://234ledger.com.ng)**, an extra tab has been added which enable users to extract the actual content of an article from its URL, and further summarize it using any configured summarization API of their choice. This tab can be accessed from the "Actions" column of the articles' view.
 
-- This feature has brought about the inclusion of **jsdom** and **@mozilla/readability** to the project dependecies. Do not forget to ``npm install`` when you update your local repositories. The **[\.env](./.env)** file has also been augmented with new configurations.
+- This feature has brought about the inclusion of **jsdom** and **@mozilla/readability** to the project dependencies. Do not forget to ``npm install`` when you update your local repositories. The **[\.env](./.env)** file has also been augmented with new configurations.
 
 - With reference to the summarization feature, users can decide on a summarization API and integrate it based on the instructions in the **[\.env](./.env)** file. **Personally, due to my dislike for limits, I set up a local python-based abstractive summarization API using Anaconda, pyTorch, HuggingFace transformers (models include t5-small, pegasus, or even most suitable facebook/bart-large-cnn), and Flask. It can be easily done.**
 
 - Please note that summarization will not work for you if you have not set it up.
+
+### 5th December, 2024 1PM WAT - Important Roadmap Update
+
+- The roadmap list has been updated with an important third item. Please contact me if you wish to contribute to it.
 
 ---
 
@@ -174,6 +178,11 @@ This project continues to evolve based on [234Ledger.com.ng](https://234ledger.c
 
 2. Automation:  
    - Fully automating the Super Highway for seamless operation.  
+
+3. Trading Sentiment Indicator:  
+   - Although not directly related to this project, utilizing the GDELT API, with HuggingFace Transformers and Pytorch (possibly for classification, organization and redundancy elimination), and a bit of Node.js-based automation to build a real-time scaled headless sentiment indicator for both FX and Cryptocurrencies, as an additional microservice and indicator to my trading network, "The Ark". It should be able to detect real-time sentiments towards cryptocurrencies and individual fiats, bull and bear markets, hence, being used to enhance decision-making on Spot and Futures trading protocols in The Ark.
+
+   - Although The Ark is not public, this indicator will likely be public, free and open-sourced as my contribution to the traders' community. It should be available to the public by January 2025.
 
 ---
 
